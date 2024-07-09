@@ -47,11 +47,12 @@ console.log('array of employee data: ',  employees );
 
 
 // This function will calculate 1 employee's bonus!
-//
+
 function calculateIndividualEmployeeBonus( employee ) {  
   // take in one employee as argument
   // initialize (set = 0) each variable
   console.log(employee);
+  let employeeSalary = employee.annualSalary * 1
   let bonusPercentage = 0;
   let totalCompensation = 0
   let totalBonus = 0
@@ -60,13 +61,34 @@ function calculateIndividualEmployeeBonus( employee ) {
     if (employee.reviewRating <= 2){
       bonusPercentage = 0;
       totalBonus = 0;
-      totalCompensation = employee.annualSalary;
+      totalCompensation = employeeSalary;
       console.log(employee.name, bonusPercentage, totalBonus, totalCompensation);
     }
     // if rating of 3, 4% bonus
-    else if
+    else if(employee.reviewRating === 3){
+      console.log('This is a rating of 3');
+      bonusPercentage = 4;
+      totalBonus = employeeSalary * bonusPercentage/100;
+      totalCompensation = employeeSalary + totalBonus;
+      console.log(employee.name, bonusPercentage, totalBonus, totalCompensation);
+    }
     // if rating of 4, 6% bonus
+    else if(employee.reviewRating === 4){
+      console.log('This is a rating of 4');
+      bonusPercentage = 6;
+      totalBonus = employeeSalary * bonusPercentage/100;
+      totalCompensation = employeeSalary + totalBonus;
+      console.log(employee.name, bonusPercentage, totalBonus, totalCompensation);
+    }
     // if rating of 5, 10% bonus
+    else if(employee.reviewRating === 5){
+      console.log('This is a rating of 5');
+      bonusPercentage = 10;
+      totalBonus = employeeSalary * bonusPercentage/100;
+      totalCompensation = employeeSalary + totalBonus;
+      console.log(employee.name, bonusPercentage, totalBonus, totalCompensation);
+    }
+
     //AND  if ID is 4 digits, additional 5%  -- this only affects a rating of 5
     // AND if income > $65000, bonus adjusted down 1%  -- but not if bonus is 0
 
@@ -79,7 +101,7 @@ let testEmployee = {
   name: 'Atticus',
   employeeNumber: '2405',
   annualSalary: '47000',
-  reviewRating: 2
+  reviewRating: 5
 }
 
 
