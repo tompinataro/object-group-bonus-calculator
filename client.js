@@ -81,7 +81,7 @@ function calculateIndividualEmployeeBonus( employee ) {
       console.log(employee.name, bonusPercentage, totalBonus, totalCompensation);
     }
     // if rating of 5, 10% bonus
-    else if(employee.reviewRating === 5){
+    else {
       console.log('This is a rating of 5');
       bonusPercentage = 10;
       totalBonus = employeeSalary * bonusPercentage/100;
@@ -90,6 +90,12 @@ function calculateIndividualEmployeeBonus( employee ) {
     }
 
     //AND  if ID is 4 digits, additional 5%  -- this only affects a rating of 5
+    if (employeeNumber.length === 4){
+      totalBonus = totalBonus * 1.05;
+      console.log('This employee ID is 4 digits and the bonus is adjusted by 5%');
+
+    }
+
     // AND if income > $65000, bonus adjusted down 1%  -- but not if bonus is 0
 
   // create a new object to host name, bonusPercentage, totalCompensation, and totalBonus
